@@ -22,6 +22,6 @@ jobs:
         run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p  {{ secrets.$DOCKERHUB_TOKEN }}
     - uses: actions/checkout@v2
     - name: build image 
-      run: docker compose -f docker-compose.yml up web -d --tag ${{ secrets.DOCKERHUB_USERNAME }}/lavanya:v1
+      run: docker compose -f docker-compose.yml up web -d 
     - name: docker push
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/lavanya:v1
